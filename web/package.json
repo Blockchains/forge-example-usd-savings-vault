@@ -1,0 +1,14 @@
+{
+  "name": "usd-savings-vault-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "artifacts": "node scripts/artifacts.mjs",
+    "build": "npm run artifacts && tsc --noEmit && vite build",
+    "dev": "npm run artifacts && vite",
+    "test": "npm run artifacts && vitest run"
+  },
+  "dependencies": { "viem": "^2.21.0" },
+  "devDependencies": { "typescript": "^5.6.0", "vite": "^5.4.0", "vitest": "^2.1.0" }
+}

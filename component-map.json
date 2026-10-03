@@ -1,0 +1,325 @@
+{
+ "idea": "A USD-valued savings vault (ERC-4626) where users deposit WETH and receive shares; deposits and total assets are priced in USD with a Chainlink price feed oracle; an admin role manages a USD deposit cap and a management fee (access control).",
+ "capabilities": [
+  {
+   "id": "price-oracle",
+   "score": 4.161,
+   "why": [
+    "price",
+    "oracle",
+    "price feed",
+    "semantic z=1.90"
+   ]
+  },
+  {
+   "id": "vault",
+   "score": 3.548,
+   "why": [
+    "vault",
+    "savings",
+    "semantic z=3.37"
+   ]
+  },
+  {
+   "id": "access-control",
+   "score": 1.1,
+   "why": [
+    "admin"
+   ]
+  }
+ ],
+ "selected": [
+  {
+   "id": "chainlink-evm:contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol:AggregatorV3Interface",
+   "slug": "chainlink-evm",
+   "name": "AggregatorV3Interface",
+   "path": "contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+   "kind": "interface",
+   "lang": "Solidity",
+   "license": "MIT",
+   "license_class": "permissive",
+   "pragma": "^0.8.0",
+   "score": 2.594,
+   "raw_url": "https://raw.githubusercontent.com/Blockchains/chainlink-evm/develop/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+   "commit": "d1ee27b0b5875adb8eca1e0da05926f7eb1f6e1f",
+   "fork": "Blockchains/chainlink-evm",
+   "upstream": "smartcontractkit/chainlink-evm",
+   "capability": "price-oracle",
+   "role": "primary"
+  },
+  {
+   "id": "openzeppelin-contracts:contracts/token/ERC20/extensions/ERC4626.sol:ERC4626",
+   "slug": "openzeppelin-contracts",
+   "name": "ERC4626",
+   "path": "contracts/token/ERC20/extensions/ERC4626.sol",
+   "kind": "abstract contract",
+   "lang": "Solidity",
+   "license": "MIT",
+   "license_class": "permissive",
+   "pragma": "^0.8.24",
+   "score": 3.31,
+   "raw_url": "https://raw.githubusercontent.com/Blockchains/openzeppelin-contracts/master/contracts/token/ERC20/extensions/ERC4626.sol",
+   "commit": "40a51f7e78852e48d0b128d4ee3d620cbc7d35d8",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "capability": "vault",
+   "role": "primary"
+  },
+  {
+   "id": "openzeppelin-contracts:contracts/access/AccessControl.sol:AccessControl",
+   "slug": "openzeppelin-contracts",
+   "name": "AccessControl",
+   "path": "contracts/access/AccessControl.sol",
+   "kind": "abstract contract",
+   "lang": "Solidity",
+   "license": "MIT",
+   "license_class": "permissive",
+   "pragma": "^0.8.20",
+   "score": 3.288,
+   "raw_url": "https://raw.githubusercontent.com/Blockchains/openzeppelin-contracts/master/contracts/access/AccessControl.sol",
+   "commit": "40a51f7e78852e48d0b128d4ee3d620cbc7d35d8",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "capability": "access-control",
+   "role": "primary"
+  },
+  {
+   "id": "openzeppelin-contracts:contracts/access/Ownable.sol:Ownable",
+   "slug": "openzeppelin-contracts",
+   "name": "Ownable",
+   "path": "contracts/access/Ownable.sol",
+   "kind": "abstract contract",
+   "lang": "Solidity",
+   "license": "MIT",
+   "license_class": "permissive",
+   "pragma": "^0.8.20",
+   "score": null,
+   "raw_url": "https://raw.githubusercontent.com/Blockchains/openzeppelin-contracts/master/contracts/access/Ownable.sol",
+   "commit": "40a51f7e78852e48d0b128d4ee3d620cbc7d35d8",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "capability": "access-control",
+   "role": "companion"
+  }
+ ],
+ "license": {
+  "project_license": "MIT",
+  "warning": null
+ },
+ "copied_files": [
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/access/Ownable.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/utils/Context.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/access/AccessControl.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/access/AccessControl.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/utils/introspection/ERC165.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/utils/introspection/IERC165.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/access/IAccessControl.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/token/ERC20/extensions/ERC4626.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC4626.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/utils/math/Math.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/utils/math/SafeCast.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/utils/math/SafeCast.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/utils/Panic.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/utils/Panic.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/interfaces/IERC4626.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/interfaces/IERC4626.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/token/ERC20/extensions/IERC20Metadata.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/token/ERC20/IERC20.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/token/ERC20/utils/SafeERC20.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/interfaces/IERC20Metadata.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/interfaces/IERC20Metadata.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/interfaces/IERC1363.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/interfaces/IERC1363.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/interfaces/IERC165.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/interfaces/IERC165.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/interfaces/IERC20.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/interfaces/IERC20.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/token/ERC20/ERC20.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "openzeppelin-contracts",
+   "path": "contracts/interfaces/draft-IERC6093.sol",
+   "dest": "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+   "fork": "Blockchains/openzeppelin-contracts",
+   "commit": "cab19933c33c2ad1d4c7a84864a3601dddfd16f3",
+   "tag": "v5.7.0",
+   "upstream": "OpenZeppelin/openzeppelin-contracts",
+   "license": "MIT"
+  },
+  {
+   "slug": "chainlink-evm",
+   "path": "contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+   "dest": "lib/chainlink-evm/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol",
+   "fork": "Blockchains/chainlink-evm",
+   "commit": "d1ee27b0b5875adb8eca1e0da05926f7eb1f6e1f",
+   "tag": null,
+   "upstream": "smartcontractkit/chainlink-evm",
+   "license": "MIT (portions other licences; see LICENSE)"
+  }
+ ],
+ "remappings": [
+  "@chainlink/contracts/src/=lib/chainlink-evm/contracts/src/",
+  "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"
+ ]
+}

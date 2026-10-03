@@ -1,0 +1,4 @@
+node_modules
+dist
+src/artifacts.json
+src/component-map.json

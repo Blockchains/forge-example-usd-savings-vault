@@ -1,0 +1,29 @@
+NOTICE
+
+This project was composed by Blockchain Lab Forge (https://blockchainlab.com/forge) from the following open-source projects.
+Files are copied unmodified, with their original SPDX headers, under lib/<project>/.
+
+- smartcontractkit/chainlink-evm (via https://github.com/Blockchains/chainlink-evm @ d1ee27b0b5875adb8eca1e0da05926f7eb1f6e1f) - licence: MIT (portions other licences; see LICENSE)
+    contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol
+
+- OpenZeppelin/openzeppelin-contracts (via https://github.com/Blockchains/openzeppelin-contracts @ cab19933c33c2ad1d4c7a84864a3601dddfd16f3 (tag v5.7.0)) - licence: MIT
+    contracts/access/AccessControl.sol
+    contracts/access/IAccessControl.sol
+    contracts/access/Ownable.sol
+    contracts/interfaces/IERC1363.sol
+    contracts/interfaces/IERC165.sol
+    contracts/interfaces/IERC20.sol
+    contracts/interfaces/IERC20Metadata.sol
+    contracts/interfaces/IERC4626.sol
+    contracts/interfaces/draft-IERC6093.sol
+    contracts/token/ERC20/ERC20.sol
+    contracts/token/ERC20/IERC20.sol
+    contracts/token/ERC20/extensions/ERC4626.sol
+    contracts/token/ERC20/extensions/IERC20Metadata.sol
+    contracts/token/ERC20/utils/SafeERC20.sol
+    contracts/utils/Context.sol
+    contracts/utils/Panic.sol
+    contracts/utils/introspection/ERC165.sol
+    contracts/utils/introspection/IERC165.sol
+    contracts/utils/math/Math.sol
+    contracts/utils/math/SafeCast.sol

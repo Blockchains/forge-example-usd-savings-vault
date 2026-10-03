@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>USD Savings Vault (ERC-4626 + Chainlink) - composed by Blockchain Lab Forge</title>
+  <style>
+    body{font-family:system-ui,sans-serif;background:#0b0f14;color:#e6edf3;max-width:960px;margin:0 auto;padding:24px;line-height:1.5}
+    a{color:#7cc4ff} code{background:#161b22;padding:1px 5px;border-radius:4px}
+    .card{background:#11161d;border:1px solid #253041;border-radius:10px;padding:16px;margin:16px 0}
+    table{width:100%;border-collapse:collapse;font-size:14px} td,th{border-bottom:1px solid #253041;padding:6px;text-align:left;vertical-align:top}
+    button{background:#2f81f7;color:#fff;border:0;border-radius:6px;padding:8px 14px;cursor:pointer}
+    input,select{background:#0b0f14;color:#e6edf3;border:1px solid #253041;border-radius:6px;padding:8px;box-sizing:border-box}
+    .mono{font-family:ui-monospace,monospace;font-size:13px;word-break:break-all}
+  </style>
+</head>
+<body>
+  <h1>USD Savings Vault</h1>
+  <p>Composed by <a href="https://blockchainlab.com/forge">Blockchain Lab Forge</a> from the idea: <em id="idea"></em></p>
+  <div class="card"><h2>Live Chainlink ETH/USD</h2>
+    <p>Mainnet: <span id="feed-mainnet">loading...</span></p><p>Sepolia: <span id="feed-sepolia">loading...</span></p>
+    <p>Deposit <input id="eth" type="number" value="1" step="0.1" style="width:110px"> WETH with entry fee <input id="fee" type="number" value="50" style="width:80px"> bps</p><p id="calc"></p></div>
+  <div class="card"><h2>Inspect a deployed vault</h2>
+    <select id="lnet"><option value="sepolia">Sepolia</option><option value="mainnet">Mainnet</option></select>
+    <input id="lookup" placeholder="vault address 0x..." style="width:70%"><div id="vault" class="mono"></div></div>
+  <div class="card"><h2>Deploy your own vault to Sepolia</h2>
+    <p>Deploys <code>UsdSavingsVault</code> (bytecode compiled by <code>forge build</code> in CI) over Sepolia WETH and the Sepolia Chainlink ETH/USD feed, with you as admin and risk manager.</p>
+    <p>USD deposit cap <input id="cap" type="number" value="10000" style="width:140px"> (0 = no cap)</p>
+    <button id="deploy">Connect wallet and deploy</button><div id="deploylog" class="mono"></div></div>
+  <div class="card"><h2>Component map</h2><p id="lic"></p><table id="map"><thead><tr><th>Capability</th><th>Component</th><th>From</th><th>Licence</th></tr></thead><tbody></tbody></table><p id="copied"></p></div>
+  <p>Source: <a href="https://github.com/Blockchains/forge-example-usd-savings-vault">Blockchains/forge-example-usd-savings-vault</a></p>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>
