@@ -49,3 +49,10 @@ Machine-readable: [`component-map.json`](component-map.json) · plan: [`plan.jso
 **MIT**. All copied components are permissively licensed. Every copied file keeps its original SPDX header. Attribution is in [NOTICE](NOTICE).
 
 Not audited. Review the code yourself before you put real value on mainnet.
+
+## Contributing
+
+Issues and pull requests are welcome. Please read the [contributing guide](https://github.com/Blockchains/.github/blob/main/CONTRIBUTING.md), [code of conduct](https://github.com/Blockchains/.github/blob/main/CODE_OF_CONDUCT.md) and [security policy](https://github.com/Blockchains/.github/blob/main/SECURITY.md) first.
+
+---
+Built by Blockchain Lab — [blockchainlab.com](https://blockchainlab.com/?utm_source=github&utm_medium=readme&utm_campaign=forge-example-usd-savings-vault)
