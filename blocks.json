@@ -1,0 +1,107 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Blockchains/.github/main/docs/blocks.schema.json",
+  "schema_version": "1.0",
+  "name": "forge-example-usd-savings-vault",
+  "repo": "Blockchains/forge-example-usd-savings-vault",
+  "summary": "Composed ERC-4626 savings vault that reports value in USD via a Chainlink feed, with a USD deposit cap, entry fee (max 5%) and RISK_MANAGER_ROLE controls (UsdSavingsVault), plus a viem front end on GitHub Pages.",
+  "kind": [
+    "contracts",
+    "web-app"
+  ],
+  "stability": "reference",
+  "license": "MIT",
+  "homepage": "https://blockchains.github.io/forge-example-usd-savings-vault/",
+  "entrypoints": [
+    {
+      "type": "solidity",
+      "name": "UsdSavingsVault",
+      "ref": "src/UsdSavingsVault.sol",
+      "install": "forge install Blockchains/forge-example-usd-savings-vault"
+    },
+    {
+      "type": "file",
+      "name": "script/Deploy.s.sol",
+      "ref": "script/Deploy.s.sol",
+      "usage": "forge script script/Deploy.s.sol --rpc-url $SEPOLIA_RPC_URL --account <keystore> --broadcast"
+    },
+    {
+      "type": "file",
+      "name": "component-map.json, plan.json",
+      "ref": "component-map.json",
+      "usage": "provenance: capability → component → pinned fork commit"
+    },
+    {
+      "type": "web",
+      "name": "web/",
+      "ref": "web/",
+      "usage": "cd web && npm ci && npm run dev"
+    }
+  ],
+  "inputs": [
+    {
+      "name": "constructor args",
+      "type": "Solidity",
+      "description": "UsdSavingsVault(IERC20Metadata asset, AggregatorV3Interface feed, name, symbol, …) (see src/UsdSavingsVault.sol)"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "deployed contracts",
+      "type": "EVM"
+    },
+    {
+      "name": "events/errors",
+      "type": "ABI",
+      "description": "see src/"
+    }
+  ],
+  "deps": [
+    "foundry (solc 0.8.30)",
+    "node>=20 (web/)"
+  ],
+  "compatible_with": [
+    {
+      "repo": "Blockchains/blockchainlab-index",
+      "how": "the composer that generated this repo"
+    },
+    {
+      "repo": "Blockchains/blockchainlab-index",
+      "how": "components were retrieved from the index"
+    },
+    {
+      "repo": "Blockchains/blockchainlab-sdk",
+      "how": "yields/stablecoins data next to the vault UI"
+    },
+    {
+      "repo": "Blockchains/blockchainlab-labs",
+      "how": "L28 invariant-testing lab for vault properties"
+    }
+  ],
+  "tests": {
+    "command": "forge test -vv",
+    "ci": ".github/workflows/ci.yml",
+    "network": true
+  },
+  "env": [
+    {
+      "name": "MAINNET_RPC_URL",
+      "required": false,
+      "purpose": "enables live-chain fork tests"
+    },
+    {
+      "name": "SEPOLIA_RPC_URL",
+      "required": false,
+      "purpose": "deploy target"
+    },
+    {
+      "name": "DEPLOYER_PRIVATE_KEY",
+      "required": false,
+      "purpose": "repo secret for the Deploy workflow only; never in files"
+    }
+  ],
+  "docs": {
+    "readme": "README.md",
+    "agents": "AGENTS.md",
+    "llms": "llms.txt"
+  }
+}

@@ -1,0 +1,24 @@
+# forge-example-usd-savings-vault
+
+> Composed ERC-4626 savings vault that reports value in USD via a Chainlink feed, with a USD deposit cap, entry fee (max 5%) and RISK_MANAGER_ROLE controls (UsdSavingsVault), plus a viem front end on GitHub Pages.
+
+## Docs
+
+- [README](https://raw.githubusercontent.com/Blockchains/forge-example-usd-savings-vault/main/README.md): overview, install and the 'Use as a building block' section
+- [AGENTS.md](https://raw.githubusercontent.com/Blockchains/forge-example-usd-savings-vault/main/AGENTS.md): setup, build/test commands, structure map, conventions and rules for AI coding agents
+- [blocks.json](https://raw.githubusercontent.com/Blockchains/forge-example-usd-savings-vault/main/blocks.json): machine-readable building-block manifest (entrypoints, inputs, outputs, deps, compatible blocks)
+
+## Key files
+
+- [src/UsdSavingsVault.sol](https://github.com/Blockchains/forge-example-usd-savings-vault/blob/main/src/UsdSavingsVault.sol): contract
+- [component-map.json](https://github.com/Blockchains/forge-example-usd-savings-vault/blob/main/component-map.json): provenance
+- [NOTICE](https://github.com/Blockchains/forge-example-usd-savings-vault/blob/main/NOTICE): attribution
+
+## Related
+
+- [Build with Blocks](https://github.com/Blockchains/.github/blob/main/docs/BUILD-WITH-BLOCKS.md): how to assemble projects from Blockchains repos
+- [Org llms.txt](https://blockchains.github.io/llms.txt) · [blocks catalogue](https://blockchains.github.io/blocks.json)
+- [Blockchains/blockchainlab-index](https://github.com/Blockchains/blockchainlab-index): the composer that generated this repo
+- [Blockchains/blockchainlab-index](https://github.com/Blockchains/blockchainlab-index): components were retrieved from the index
+- [Blockchains/blockchainlab-sdk](https://github.com/Blockchains/blockchainlab-sdk): yields/stablecoins data next to the vault UI
+- [Blockchains/blockchainlab-labs](https://github.com/Blockchains/blockchainlab-labs): L28 invariant-testing lab for vault properties

@@ -45,6 +45,43 @@ Copied sources (unmodified, under `lib/<project>/`, listed file by file in [NOTI
 
 Machine-readable: [`component-map.json`](component-map.json) · plan: [`plan.json`](plan.json)
 
+<!-- blocks:start -->
+## Use as a building block
+
+> **For AI agents and builders:** read [`AGENTS.md`](AGENTS.md) (setup, commands, structure, rules), [`llms.txt`](llms.txt) (doc map) and the machine-readable [`blocks.json`](blocks.json) ([schema](https://github.com/Blockchains/.github/blob/main/docs/BLOCKS-SCHEMA.md)). How all Blockchains blocks fit together: **[Build with Blocks](https://github.com/Blockchains/.github/blob/main/docs/BUILD-WITH-BLOCKS.md)** · org catalogue: [https://blockchains.github.io/blocks.json](https://blockchains.github.io/blocks.json).
+
+**What it exports**
+
+| Export | Type | Install / access |
+|---|---|---|
+| `UsdSavingsVault` | solidity | `forge install Blockchains/forge-example-usd-savings-vault` |
+| `script/Deploy.s.sol` | file | `forge script script/Deploy.s.sol --rpc-url $SEPOLIA_RPC_URL --account <keystore> --broadcast` |
+| `component-map.json, plan.json` | file | `provenance: capability → component → pinned fork commit` |
+| `web/` | web | `cd web && npm ci && npm run dev` |
+
+**Minimal example** (from the repo README; CI runs the same)
+
+```bash
+git clone --recursive https://github.com/Blockchains/forge-example-usd-savings-vault && cd forge-example-usd-savings-vault
+forge test -vv                    # unit tests + Sepolia fork test (set SEPOLIA_RPC_URL)
+cd web && npm ci && npm run dev   # viem front end; mainnet/Sepolia WETH + Chainlink ETH/USD addresses in web/src/chain.ts
+```
+
+**Inputs → outputs**
+
+- In: `constructor args` (Solidity) UsdSavingsVault(IERC20Metadata asset, AggregatorV3Interface feed, name, symbol, …) (see src/UsdSavingsVault.sol)
+- Out: `deployed contracts` (EVM); `events/errors` (ABI) see src/
+
+**Composes with**
+
+- [Blockchains/blockchainlab-index](https://github.com/Blockchains/blockchainlab-index): the composer that generated this repo
+- [Blockchains/blockchainlab-index](https://github.com/Blockchains/blockchainlab-index): components were retrieved from the index
+- [Blockchains/blockchainlab-sdk](https://github.com/Blockchains/blockchainlab-sdk): yields/stablecoins data next to the vault UI
+- [Blockchains/blockchainlab-labs](https://github.com/Blockchains/blockchainlab-labs): L28 invariant-testing lab for vault properties
+
+**Versioning & stability:** `reference`. Reference output of an automated composer; copied components are pinned to fork release tags (see NOTICE / component-map.json). Not audited. Treat as a starting point and review before deploying with value.
+<!-- blocks:end -->
+
 ## Licence
 **MIT**. All copied components are permissively licensed. Every copied file keeps its original SPDX header. Attribution is in [NOTICE](NOTICE).
 
